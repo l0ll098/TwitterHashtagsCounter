@@ -1,0 +1,15 @@
+{
+  "name": "twitter_hashtags_counter",
+  "version": "0.0.0",
+  "description": "TwitterHashtagsCounter",
+  "main": "server.js",
+  "author": {
+    "name": "Lorenzo"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
+}
