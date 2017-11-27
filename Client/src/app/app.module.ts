@@ -5,9 +5,12 @@ import { HttpModule } from "@angular/http";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatFormFieldModule, MatInputModule } from "@angular/material";
-import { MatButtonModule } from "@angular/material";
+import {
+	MatFormFieldModule,
+	MatInputModule,
+	MatToolbarModule,
+	MatButtonModule
+} from "@angular/material";
 
 
 import { AppComponent } from './app.component';

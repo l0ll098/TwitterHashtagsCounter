@@ -58,6 +58,7 @@
     <Folder Include="Client\" />
     <Folder Include="Client\src\" />
     <Folder Include="Client\src\app\" />
+    <Folder Include="Client\src\app\Types\" />
     <Folder Include="Client\src\assets\" />
     <Folder Include="Client\src\environments\" />
   </ItemGroup>
@@ -65,6 +66,9 @@
     <TypeScriptCompile Include="Client\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="Client\src\app\app.component.ts" />
     <TypeScriptCompile Include="Client\src\app\app.module.ts" />
+    <TypeScriptCompile Include="Client\src\app\Types\StructeredTweet.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Client\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="Client\src\environments\environment.ts" />
     <TypeScriptCompile Include="Client\src\main.ts" />
