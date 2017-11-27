@@ -9,7 +9,8 @@ import {
 	MatFormFieldModule,
 	MatInputModule,
 	MatToolbarModule,
-	MatButtonModule
+	MatButtonModule,
+	MatListModule
 } from "@angular/material";
 
 
@@ -30,7 +31,8 @@ import { AppComponent } from './app.component';
 		MatToolbarModule,
 		MatFormFieldModule,
 		MatInputModule,
-		MatButtonModule
+		MatButtonModule,
+		MatListModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

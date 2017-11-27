@@ -14,10 +14,21 @@
 
         <button mat-raised-button color="primary" (click)="searchAndCount()">Search and count</button>
     </div>
-    
 
-    <div class="PostsList">
 
+    <div *ngIf="haveToShowResults">
+        <div *ngFor="let key of getKeys(structeredTweets)">
+
+            <mat-list>
+                <mat-list-item>
+                    <img matListAvatar src="{{structeredTweets[key].profile_image_url_https}}" 
+                         alt="{{structeredTweets[key].screen_name}}"/>
+                    <h3 matLine>{{structeredTweets[key].screen_name}}</h3>
+                    <span matLine>{{structeredTweets[key].count}}</span>
+                </mat-list-item>
+            </mat-list>
+
+        </div>
     </div>
-    
+
 </div>

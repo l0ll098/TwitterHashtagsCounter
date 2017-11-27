@@ -15,6 +15,8 @@ export class AppComponent {
 	public tweets;
 	public structeredTweets = [];
 
+	public haveToShowResults = false;
+
 
 	constructor(private http: Http, fb: FormBuilder) {
 		this.searchHashtagFG = fb.group({
@@ -60,6 +62,8 @@ export class AppComponent {
 
 
 					console.log("Results found:", this.structeredTweets);
+
+					this.haveToShowResults = true;
 				});
 
 			} else {
@@ -69,4 +73,16 @@ export class AppComponent {
 		
 	}
 
+
+
+	public getKeys(array) {
+		var keys = [];
+		for (var key in array) {
+			if (array.hasOwnProperty(key)) {
+				keys.push(key);
+			}
+		}
+
+		return keys;
+	}
 }
