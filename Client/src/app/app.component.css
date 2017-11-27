@@ -18,3 +18,32 @@ mat-toolbar {
     top: 64px;
     margin-top: 10px;
 }
+
+
+@media screen and (min-width: 960px) {
+    .form {
+        height: auto;
+        width: 52%;
+        margin: 30px auto;
+        padding: 3em 2em 2em 2em;
+        background: #fafafa;
+        box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    }
+
+}
+
+@media screen and (max-width: 959px) {
+    .form {
+        width: 70%;
+        height: auto;
+        margin: 30px auto;
+        padding: 3em 1em 2em 1em;
+        background: #fafafa;
+        box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    }
+
+}
+
+mat-form-field {
+    width: 100%;
+}
