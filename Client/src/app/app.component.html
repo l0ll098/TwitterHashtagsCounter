@@ -5,7 +5,7 @@
 
 <div id="content">
 
-    <div class="form">
+    <form class="form">
         <div [formGroup]="searchHashtagFG">
             <mat-form-field>
                 <input type="text" matInput placeholder="Hashtag" formControlName="hashtag" />
@@ -13,7 +13,7 @@
         </div>
 
         <button mat-raised-button color="primary" (click)="searchAndCount()">Search and count</button>
-    </div>
+    </form>
 
 
     <div *ngIf="haveToShowResults">
