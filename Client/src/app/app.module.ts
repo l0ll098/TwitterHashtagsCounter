@@ -10,7 +10,8 @@ import {
 	MatInputModule,
 	MatToolbarModule,
 	MatButtonModule,
-	MatListModule
+	MatListModule,
+	MatProgressBarModule
 } from "@angular/material";
 
 
@@ -32,7 +33,8 @@ import { AppComponent } from './app.component';
 		MatFormFieldModule,
 		MatInputModule,
 		MatButtonModule,
-		MatListModule
+		MatListModule,
+		MatProgressBarModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -30,6 +30,15 @@ mat-toolbar {
         box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
     }
 
+    mat-progress-bar {
+        width: calc(52% + 2em);
+        margin: -30px auto auto auto;
+    }
+
+    mat-list{
+        width: 52%;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 959px) {
@@ -42,8 +51,13 @@ mat-toolbar {
         box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
     }
 
+    mat-progress-bar {
+        width: 70%;
+        margin: -30px auto auto auto;
+    }
 }
 
 mat-form-field {
     width: 100%;
 }
+

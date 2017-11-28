@@ -16,6 +16,9 @@
     </form>
 
 
+    <mat-progress-bar mode="indeterminate" *ngIf="showProgressBar"></mat-progress-bar>
+
+
     <div *ngIf="haveToShowResults">
         <div *ngFor="let key of getKeys(structeredTweets)">
 

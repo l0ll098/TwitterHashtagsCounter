@@ -16,7 +16,7 @@ export class AppComponent {
 	public structeredTweets = [];
 
 	public haveToShowResults = false;
-
+	public showProgressBar = false;
 
 	constructor(private http: Http, fb: FormBuilder) {
 		this.searchHashtagFG = fb.group({
@@ -26,6 +26,8 @@ export class AppComponent {
 
 
 	async searchAndCount() {
+		this.showProgressBar = true;
+
 		console.log("Searching with hashtag:", this.searchHashtagFG.get("hashtag").value);
 
 
@@ -64,6 +66,7 @@ export class AppComponent {
 					console.log("Results found:", this.structeredTweets);
 
 					this.haveToShowResults = true;
+					this.showProgressBar = false;
 				});
 
 			} else {
