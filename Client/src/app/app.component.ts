@@ -61,7 +61,14 @@ export class AppComponent {
 					}
 
 
-					console.log("Results found:", this.structeredTweets);
+					// Order by count asc
+					this.structeredTweets.sort(function (a, b) {
+						return (a.count < b.count) ? 1 : (
+							(a.count > b.count) ? -1 : 0
+						);
+					});
+
+					console.log("Sorted results:", this.structeredTweets);
 
 					this.haveToShowResults = true;
 					this.showProgressBar = false;
