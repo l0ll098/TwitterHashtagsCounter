@@ -25,7 +25,7 @@ export class AppComponent {
 	}
 
 
-	async searchAndCount() {
+	public searchAndCount() {
 		this.showProgressBar = true;
 
 		console.log("Searching with hashtag:", this.searchHashtagFG.get("hashtag").value);
@@ -44,6 +44,7 @@ export class AppComponent {
 				this.http.post('http://localhost:1337/api/search', searchterm, { headers: headers }).subscribe((res) => {
 
 					this.tweets = res.json().data.statuses;
+
 
 					for (let tweet of this.tweets) {
 
@@ -72,6 +73,7 @@ export class AppComponent {
 
 					this.haveToShowResults = true;
 					this.showProgressBar = false;
+
 				});
 
 			} else {
@@ -80,6 +82,15 @@ export class AppComponent {
 		})
 		
 	}
+
+
+	/**
+	 * This will save fetched tweets with ALL their information
+	 */
+	public downloadAsJson() {
+		this.downloadFile(this.searchHashtagFG.get("hashtag").value + ".json", JSON.stringify(this.tweets, null, '\t'));
+	}
+
 
 
 	/**
@@ -95,5 +106,25 @@ export class AppComponent {
 		}
 
 		return -1;
+	}
+
+	
+
+	/**
+	 * This function will create a file and download it
+	 * @param {string} filename The filename
+	 * @param {string} text What you have to write
+	 */
+	private downloadFile(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
 	}
 }

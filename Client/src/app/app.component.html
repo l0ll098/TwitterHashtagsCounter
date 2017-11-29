@@ -14,6 +14,9 @@
 
         <button mat-raised-button color="primary" (click)="searchAndCount()"
                 [disabled]="!searchHashtagFG.value.hashtag">Search and count</button>
+
+        <button mat-raised-button color="primary" 
+                (click)="downloadAsJson()" [disabled]="!haveToShowResults">Export as JSON</button>
     </form>
 
 
