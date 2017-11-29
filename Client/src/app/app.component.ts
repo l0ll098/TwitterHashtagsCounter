@@ -47,18 +47,16 @@ export class AppComponent {
 
 					for (let tweet of this.tweets) {
 
-						// If the user has already been added, update his tweets counter
-						if (this.structeredTweets["Id_" + tweet.user.id_str]) {
-							this.structeredTweets["Id_" + tweet.user.id_str].count++;
+						if (this.getUserIndex(tweet.user.id_str) >= 0) {
+							this.structeredTweets[this.getUserIndex(tweet.user.id_str)].count++;
 						} else {
-							// Otherwise add him to the array
-							this.structeredTweets["Id_" + tweet.user.id_str] = {
+							this.structeredTweets.push({
 								screen_name: tweet.user.screen_name,
 								id_str: tweet.user.id_str,
 								profile_image_url_https: tweet.user.profile_image_url_https,
 
-								count: 1,
-							};
+								count: 1
+							});
 						}
 					}
 
@@ -77,15 +75,18 @@ export class AppComponent {
 	}
 
 
-
-	public getKeys(array) {
-		var keys = [];
-		for (var key in array) {
-			if (array.hasOwnProperty(key)) {
-				keys.push(key);
+	/**
+	 * This method will return the index of the user in the structeredTweets array.
+	 * If he's not already been added, this method will return -1.
+	 * @param {number} id_str
+	 */
+	private getUserIndex(id_str: string): number {
+		for (let i = 0; i < this.structeredTweets.length; i++) {
+			if (this.structeredTweets[i].id_str == id_str) {
+				return i;
 			}
 		}
 
-		return keys;
+		return -1;
 	}
 }
