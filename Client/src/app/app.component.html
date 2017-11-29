@@ -12,7 +12,8 @@
             </mat-form-field>
         </div>
 
-        <button mat-raised-button color="primary" (click)="searchAndCount()">Search and count</button>
+        <button mat-raised-button color="primary" (click)="searchAndCount()"
+                [disabled]="!searchHashtagFG.value.hashtag">Search and count</button>
     </form>
 
 
