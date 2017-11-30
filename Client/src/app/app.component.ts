@@ -11,7 +11,7 @@ import { StructuredTweet } from "./Types/StructeredTweet";
 })
 export class AppComponent {
 	
-	private searchHashtagFG: FormGroup;
+	public searchHashtagFG: FormGroup;
 	public tweets;
 	public structeredTweets = [];
 
@@ -28,20 +28,22 @@ export class AppComponent {
 	public searchAndCount() {
 		this.showProgressBar = true;
 
+		let url = location.protocol + "//" + location.host;
+
 		console.log("Searching with hashtag:", this.searchHashtagFG.get("hashtag").value);
 
 
 		let headers = new Headers();
 		headers.append("Content-Type", "application/X-www-form-urlencoded");
 
-		this.http.post('http://localhost:1337/api/authorize', { headers: headers }).subscribe((res) => {
+		this.http.post(url + "/api/authorize", { headers: headers }).subscribe((res) => {
 
 			// App should be authorized, proceed
 			if (res.json().success && typeof res.json().data == "string") {
 
 				let searchterm = 'query=' + this.searchHashtagFG.get("hashtag").value;
 
-				this.http.post('http://localhost:1337/api/search', searchterm, { headers: headers }).subscribe((res) => {
+				this.http.post(url + "/api/search", searchterm, { headers: headers }).subscribe((res) => {
 
 					this.tweets = res.json().data.statuses;
 
