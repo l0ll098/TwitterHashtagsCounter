@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
+import { MatSnackBar } from "@angular/material";
 
 import { StructuredTweet } from "./Types/StructeredTweet";
 
@@ -18,9 +19,22 @@ export class AppComponent {
 	public haveToShowResults = false;
 	public showProgressBar = false;
 
-	constructor(private http: Http, fb: FormBuilder) {
+	constructor(private http: Http, fb: FormBuilder, public snackBar: MatSnackBar) {
 		this.searchHashtagFG = fb.group({
 			hashtag: new FormControl()
+		});
+
+
+		window.addEventListener("offline", () => {
+			// Open a snackbar to notify user
+			this.snackBar.open("It seems you are offline...", "Ok", {
+				duration: 1000 * 60 * 60
+			});
+		});
+
+		window.addEventListener("online", () => {
+			// Hide the snackbar (it would be visible only if user was offline)
+			this.snackBar.dismiss();
 		});
 	}
 

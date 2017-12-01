@@ -11,7 +11,8 @@ import {
 	MatToolbarModule,
 	MatButtonModule,
 	MatListModule,
-	MatProgressBarModule
+	MatProgressBarModule,
+	MatSnackBarModule
 } from "@angular/material";
 
 
@@ -34,7 +35,8 @@ import { AppComponent } from './app.component';
 		MatInputModule,
 		MatButtonModule,
 		MatListModule,
-		MatProgressBarModule
+		MatProgressBarModule,
+		MatSnackBarModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
