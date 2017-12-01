@@ -11,5 +11,6 @@
   "name": "Twitter Hashtags Counter",
   "short_name": "TwitterHashtagsCounter",
   "start_url": "/",
-  "theme_color": "#ffffff"
+  "theme_color": "#303F9F",
+  "orientation": "portrait"
 }

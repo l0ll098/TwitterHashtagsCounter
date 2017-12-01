@@ -41,16 +41,13 @@
     <Compile Include="server.js" />
     <Content Include="Client\.angular-cli.json" />
     <Content Include="Client\package.json" />
-    <Content Include="Client\src\.angular-cli.json" />
     <Content Include="Client\src\app\app.component.css" />
     <Content Include="Client\src\app\app.component.html" />
     <Content Include="Client\src\browserconfig.xml" />
     <Content Include="Client\src\index.html" />
     <Content Include="Client\src\manifest.json" />
-    <Content Include="Client\src\package.json" />
     <Content Include="Client\src\styles.css" />
     <Content Include="Client\src\tsconfig.app.json" />
-    <Content Include="Client\src\tsconfig.json" />
     <Content Include="Client\src\tsconfig.spec.json" />
     <Content Include="Client\tsconfig.json" />
     <Content Include="package.json" />
